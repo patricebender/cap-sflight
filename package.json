@@ -40,14 +40,6 @@
       "db": {
         "kind": "sql"
       },
-      "[production]": {
-        "db": {
-          "kind": "hana-cloud"
-        },
-        "auth": {
-          "kind": "xsuaa"
-        }
-      },
       "[development]": {
         "auth": {
           "kind": "mocked-auth",
