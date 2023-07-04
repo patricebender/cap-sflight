@@ -3,15 +3,16 @@
 		"dialect": "plain"
 	},
 	"requires": {
-		"db": {
-			"[production]": {
+		"[postgres]": {
+			"db": {
 				"kind": "postgres",
+				"impl": "@cap-js/postgres",
 				"credentials": {
 					"host": "localhost",
-					"port": 5432,
+					"port": "5432",
+					"database": "postgres",
 					"user": "postgres",
-					"password": "postgres",
-					"database": "postgres"
+					"password": "postgres"
 				}
 			}
 		}
