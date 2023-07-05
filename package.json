@@ -17,8 +17,6 @@
     "travel-analytics": "cds watch --open travel_analytics/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "dependencies": {
-    "@cap-js/postgres": "^1.0.1",
-    "@cap-js/sqlite": "^1.0.1",
     "@sap/cds": ">=7.0.0",
     "@sap/xssec": "^3.2.7",
     "express": "^4",
@@ -39,6 +37,9 @@
   },
   "cds": {
     "requires": {
+      "db": {
+        "kind": "sql"
+      },
       "[development]": {
         "auth": {
           "kind": "mocked-auth",
