@@ -7,6 +7,45 @@ The purpose of this sample app is to:
 * Demonstrate and compare SAP Fiori features on various stacks (CAP Node.js, CAP Java SDK, ABAP)
 * Run UI test suites on various stacks
 
+## reCAP homework: Run this application with `@cap-js/sqlite` and `@cap-js/postgres`
+
+First, you have to install the dependencies by running `npm install`
+
+To run sflight with `sqlite` you have to:
+
+1. execute `cds watch`
+2. thats it!
+
+To run sflight with `postgres`, you have to:
+
+* start docker container with `docker-compose -f pg-stack.yml up -d`
+* add the credentials of the postgres database to your default env
+
+create a file named `default-env.json` and copy paste the following into it:
+
+```json
+{
+    "VCAP_SERVICES": {
+        "postgres": [
+            {
+                "label": "postgresql-db",
+                "credentials": {
+                    "host": "localhost",
+                    "port": "5432",
+                    "database": "postgres",
+                    "user": "postgres",
+                    "password": "postgres"
+                }
+            }
+        ]
+    }
+}
+```
+
+* run `cds deploy --profile pg` to deploy the csv data to your database
+* execute `cds watch --profile pg`
+* thats it!
+
 ![Process Travels Page](img.png)
 
 The app still contains some workarounds that are going to be addressed over time.
